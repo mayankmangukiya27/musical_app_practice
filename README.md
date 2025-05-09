@@ -9,6 +9,24 @@ Why we choose Provider state management technique:-
 -Perfect for apps where you don’t need complex event streams or architecture.
 -Plenty of examples, tutorials, and community support make troubleshooting easier.
 
+Screen and UI overview
+Home Screen:
+ - Displays a list of songs with album posters and artist names.
+ - Player Integration: A mini audio player is displayed when a song is playing. Tapping the poster toggles blur overlay, play/pause, and shows the current progress.
+ - Cart Support: Users can add or remove songs from their cart with a single tap. Cart icon shows total selected songs.
+
+Song Details
+ - Shows full details of a selected song (title, artist, album, release date).
+ - Integrated audio playback using just_audio.
+
+Cart
+ - checkout/remove product
+
+Data Handling
+    - Local storage with Hive is used to cache API responses.
+    - On the first app launch, songs are fetched from the remote API.
+    - On subsequent launches, data is loaded from the local database for faster performance and offline access.
+
 In this Project we have used MVVM Architecture:
 
 Why we have used MVVM architecture:-
