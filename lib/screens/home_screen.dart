@@ -283,11 +283,18 @@ class _HomeScreenState extends State<HomeScreen> {
                               }
                             },
                           ),
-                          onTap:
-                              () => NavigationService.goToSongDetails(
-                                context: context,
-                                songId: song,
-                              ),
+                          onTap: () async {
+                            final player =
+                                context.read<AudioPlayerProvider>().player;
+
+                            if (player.playing) {
+                              await player.pause();
+                            }
+                            NavigationService.goToSongDetails(
+                              context: context,
+                              songId: song,
+                            );
+                          },
                         );
                       },
                     );
